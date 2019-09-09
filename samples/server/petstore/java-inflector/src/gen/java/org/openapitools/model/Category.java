@@ -13,10 +13,10 @@ import io.swagger.annotations.ApiModelProperty;
 
 public class Category   {
   @JsonProperty("id")
-  private Long id = null;
+  private Long id;
 
   @JsonProperty("name")
-  private String name = null;
+  private String name = "default-name";
 
   /**
    **/
@@ -43,7 +43,7 @@ public class Category   {
   }
 
   
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(required = true, value = "")
   @JsonProperty("name")
   public String getName() {
     return name;
@@ -51,7 +51,6 @@ public class Category   {
   public void setName(String name) {
     this.name = name;
   }
-
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -62,8 +61,8 @@ public class Category   {
       return false;
     }
     Category category = (Category) o;
-    return Objects.equals(id, category.id) &&
-        Objects.equals(name, category.name);
+    return Objects.equals(this.id, category.id) &&
+      Objects.equals(this.name, category.name);
   }
 
   @Override

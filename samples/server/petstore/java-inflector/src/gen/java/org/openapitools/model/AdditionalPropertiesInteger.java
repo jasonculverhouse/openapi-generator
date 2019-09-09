@@ -5,34 +5,33 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.util.HashMap;
+import java.util.Map;
 
 
 
-/**
- * Model for testing reserved words
- **/
 
-@ApiModel(description = "Model for testing reserved words")
 
-public class ModelReturn   {
-  @JsonProperty("return")
-  private Integer _return;
+
+public class AdditionalPropertiesInteger extends HashMap<String, Integer>  {
+  @JsonProperty("name")
+  private String name;
 
   /**
    **/
-  public ModelReturn _return(Integer _return) {
-    this._return = _return;
+  public AdditionalPropertiesInteger name(String name) {
+    this.name = name;
     return this;
   }
 
   
   @ApiModelProperty(value = "")
-  @JsonProperty("return")
-  public Integer getReturn() {
-    return _return;
+  @JsonProperty("name")
+  public String getName() {
+    return name;
   }
-  public void setReturn(Integer _return) {
-    this._return = _return;
+  public void setName(String name) {
+    this.name = name;
   }
 
   @Override
@@ -43,21 +42,22 @@ public class ModelReturn   {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    ModelReturn _return = (ModelReturn) o;
-    return Objects.equals(this._return, _return._return);
+    AdditionalPropertiesInteger additionalPropertiesInteger = (AdditionalPropertiesInteger) o;
+    return Objects.equals(this.name, additionalPropertiesInteger.name) &&
+      super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(_return);
+    return Objects.hash(name, super.hashCode());
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class ModelReturn {\n");
-    
-    sb.append("    _return: ").append(toIndentedString(_return)).append("\n");
+    sb.append("class AdditionalPropertiesInteger {\n");
+    sb.append("    ").append(toIndentedString(super.toString())).append("\n");
+    sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -13,10 +13,10 @@ import io.swagger.annotations.ApiModelProperty;
 
 public class Tag   {
   @JsonProperty("id")
-  private Long id = null;
+  private Long id;
 
   @JsonProperty("name")
-  private String name = null;
+  private String name;
 
   /**
    **/
@@ -52,7 +52,6 @@ public class Tag   {
     this.name = name;
   }
 
-
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -62,8 +61,8 @@ public class Tag   {
       return false;
     }
     Tag tag = (Tag) o;
-    return Objects.equals(id, tag.id) &&
-        Objects.equals(name, tag.name);
+    return Objects.equals(this.id, tag.id) &&
+      Objects.equals(this.name, tag.name);
   }
 
   @Override

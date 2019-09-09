@@ -13,7 +13,7 @@ import io.swagger.annotations.ApiModelProperty;
 
 public class SpecialModelName   {
   @JsonProperty("$special[property.name]")
-  private Long $specialPropertyName = null;
+  private Long $specialPropertyName;
 
   /**
    **/
@@ -32,7 +32,6 @@ public class SpecialModelName   {
     this.$specialPropertyName = $specialPropertyName;
   }
 
-
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -42,7 +41,7 @@ public class SpecialModelName   {
       return false;
     }
     SpecialModelName $specialModelName = (SpecialModelName) o;
-    return Objects.equals($specialPropertyName, $specialModelName.$specialPropertyName);
+    return Objects.equals(this.$specialPropertyName, $specialModelName.$specialPropertyName);
   }
 
   @Override

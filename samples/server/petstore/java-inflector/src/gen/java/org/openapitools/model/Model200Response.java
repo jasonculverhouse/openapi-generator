@@ -16,10 +16,10 @@ import io.swagger.annotations.ApiModelProperty;
 
 public class Model200Response   {
   @JsonProperty("name")
-  private Integer name = null;
+  private Integer name;
 
   @JsonProperty("class")
-  private String propertyClass = null;
+  private String propertyClass;
 
   /**
    **/
@@ -55,7 +55,6 @@ public class Model200Response   {
     this.propertyClass = propertyClass;
   }
 
-
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -65,8 +64,8 @@ public class Model200Response   {
       return false;
     }
     Model200Response _200response = (Model200Response) o;
-    return Objects.equals(name, _200response.name) &&
-        Objects.equals(propertyClass, _200response.propertyClass);
+    return Objects.equals(this.name, _200response.name) &&
+      Objects.equals(this.propertyClass, _200response.propertyClass);
   }
 
   @Override

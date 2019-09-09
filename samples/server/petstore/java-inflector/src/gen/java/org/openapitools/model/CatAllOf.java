@@ -8,31 +8,28 @@ import io.swagger.annotations.ApiModelProperty;
 
 
 
-/**
- * Model for testing reserved words
- **/
 
-@ApiModel(description = "Model for testing reserved words")
 
-public class ModelReturn   {
-  @JsonProperty("return")
-  private Integer _return;
+
+public class CatAllOf   {
+  @JsonProperty("declawed")
+  private Boolean declawed;
 
   /**
    **/
-  public ModelReturn _return(Integer _return) {
-    this._return = _return;
+  public CatAllOf declawed(Boolean declawed) {
+    this.declawed = declawed;
     return this;
   }
 
   
   @ApiModelProperty(value = "")
-  @JsonProperty("return")
-  public Integer getReturn() {
-    return _return;
+  @JsonProperty("declawed")
+  public Boolean getDeclawed() {
+    return declawed;
   }
-  public void setReturn(Integer _return) {
-    this._return = _return;
+  public void setDeclawed(Boolean declawed) {
+    this.declawed = declawed;
   }
 
   @Override
@@ -43,21 +40,21 @@ public class ModelReturn   {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    ModelReturn _return = (ModelReturn) o;
-    return Objects.equals(this._return, _return._return);
+    CatAllOf catAllOf = (CatAllOf) o;
+    return Objects.equals(this.declawed, catAllOf.declawed);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(_return);
+    return Objects.hash(declawed);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class ModelReturn {\n");
+    sb.append("class CatAllOf {\n");
     
-    sb.append("    _return: ").append(toIndentedString(_return)).append("\n");
+    sb.append("    declawed: ").append(toIndentedString(declawed)).append("\n");
     sb.append("}");
     return sb.toString();
   }

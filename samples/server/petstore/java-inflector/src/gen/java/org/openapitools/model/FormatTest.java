@@ -17,43 +17,43 @@ import java.util.UUID;
 
 public class FormatTest   {
   @JsonProperty("integer")
-  private Integer integer = null;
+  private Integer integer;
 
   @JsonProperty("int32")
-  private Integer int32 = null;
+  private Integer int32;
 
   @JsonProperty("int64")
-  private Long int64 = null;
+  private Long int64;
 
   @JsonProperty("number")
-  private BigDecimal number = null;
+  private BigDecimal number;
 
   @JsonProperty("float")
-  private Float _float = null;
+  private Float _float;
 
   @JsonProperty("double")
-  private Double _double = null;
+  private Double _double;
 
   @JsonProperty("string")
-  private String string = null;
+  private String string;
 
   @JsonProperty("byte")
-  private byte[] _byte = null;
+  private byte[] _byte;
 
   @JsonProperty("binary")
-  private File binary = null;
+  private File binary;
 
   @JsonProperty("date")
-  private Date date = null;
+  private Date date;
 
   @JsonProperty("dateTime")
-  private Date dateTime = null;
+  private Date dateTime;
 
   @JsonProperty("uuid")
-  private UUID uuid = null;
+  private UUID uuid;
 
   @JsonProperty("password")
-  private String password = null;
+  private String password;
 
   /**
    * minimum: 10
@@ -260,7 +260,7 @@ public class FormatTest   {
   }
 
   
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(example = "72f98069-206d-4f12-9f12-3d1e525a8e84", value = "")
   @JsonProperty("uuid")
   public UUID getUuid() {
     return uuid;
@@ -286,7 +286,6 @@ public class FormatTest   {
     this.password = password;
   }
 
-
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -296,19 +295,19 @@ public class FormatTest   {
       return false;
     }
     FormatTest formatTest = (FormatTest) o;
-    return Objects.equals(integer, formatTest.integer) &&
-        Objects.equals(int32, formatTest.int32) &&
-        Objects.equals(int64, formatTest.int64) &&
-        Objects.equals(number, formatTest.number) &&
-        Objects.equals(_float, formatTest._float) &&
-        Objects.equals(_double, formatTest._double) &&
-        Objects.equals(string, formatTest.string) &&
-        Objects.equals(_byte, formatTest._byte) &&
-        Objects.equals(binary, formatTest.binary) &&
-        Objects.equals(date, formatTest.date) &&
-        Objects.equals(dateTime, formatTest.dateTime) &&
-        Objects.equals(uuid, formatTest.uuid) &&
-        Objects.equals(password, formatTest.password);
+    return Objects.equals(this.integer, formatTest.integer) &&
+      Objects.equals(this.int32, formatTest.int32) &&
+      Objects.equals(this.int64, formatTest.int64) &&
+      Objects.equals(this.number, formatTest.number) &&
+      Objects.equals(this._float, formatTest._float) &&
+      Objects.equals(this._double, formatTest._double) &&
+      Objects.equals(this.string, formatTest.string) &&
+      Objects.equals(this._byte, formatTest._byte) &&
+      Objects.equals(this.binary, formatTest.binary) &&
+      Objects.equals(this.date, formatTest.date) &&
+      Objects.equals(this.dateTime, formatTest.dateTime) &&
+      Objects.equals(this.uuid, formatTest.uuid) &&
+      Objects.equals(this.password, formatTest.password);
   }
 
   @Override

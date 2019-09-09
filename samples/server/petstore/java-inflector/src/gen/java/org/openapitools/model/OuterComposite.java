@@ -14,13 +14,13 @@ import java.math.BigDecimal;
 
 public class OuterComposite   {
   @JsonProperty("my_number")
-  private BigDecimal myNumber = null;
+  private BigDecimal myNumber;
 
   @JsonProperty("my_string")
-  private String myString = null;
+  private String myString;
 
   @JsonProperty("my_boolean")
-  private Boolean myBoolean = null;
+  private Boolean myBoolean;
 
   /**
    **/
@@ -73,7 +73,6 @@ public class OuterComposite   {
     this.myBoolean = myBoolean;
   }
 
-
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -83,9 +82,9 @@ public class OuterComposite   {
       return false;
     }
     OuterComposite outerComposite = (OuterComposite) o;
-    return Objects.equals(myNumber, outerComposite.myNumber) &&
-        Objects.equals(myString, outerComposite.myString) &&
-        Objects.equals(myBoolean, outerComposite.myBoolean);
+    return Objects.equals(this.myNumber, outerComposite.myNumber) &&
+      Objects.equals(this.myString, outerComposite.myString) &&
+      Objects.equals(this.myBoolean, outerComposite.myBoolean);
   }
 
   @Override

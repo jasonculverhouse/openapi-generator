@@ -13,7 +13,7 @@ import io.swagger.annotations.ApiModelProperty;
 
 public class Client   {
   @JsonProperty("client")
-  private String client = null;
+  private String client;
 
   /**
    **/
@@ -32,7 +32,6 @@ public class Client   {
     this.client = client;
   }
 
-
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -42,7 +41,7 @@ public class Client   {
       return false;
     }
     Client client = (Client) o;
-    return Objects.equals(client, client.client);
+    return Objects.equals(this.client, client.client);
   }
 
   @Override

@@ -9,7 +9,6 @@ import io.swagger.annotations.ApiModelProperty;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import org.openapitools.model.StringBooleanMap;
 
 
 
@@ -47,7 +46,7 @@ public class MapTest   {
           return b;
         }
       }
-      return null;
+      throw new IllegalArgumentException("Unexpected value '" + text + "'");
     }
   }
 
@@ -58,7 +57,7 @@ public class MapTest   {
   private Map<String, Boolean> directMap = null;
 
   @JsonProperty("indirect_map")
-  private StringBooleanMap indirectMap = null;
+  private Map<String, Boolean> indirectMap = null;
 
   /**
    **/
@@ -113,7 +112,7 @@ public class MapTest   {
 
   /**
    **/
-  public MapTest indirectMap(StringBooleanMap indirectMap) {
+  public MapTest indirectMap(Map<String, Boolean> indirectMap) {
     this.indirectMap = indirectMap;
     return this;
   }
@@ -121,13 +120,12 @@ public class MapTest   {
   
   @ApiModelProperty(value = "")
   @JsonProperty("indirect_map")
-  public StringBooleanMap getIndirectMap() {
+  public Map<String, Boolean> getIndirectMap() {
     return indirectMap;
   }
-  public void setIndirectMap(StringBooleanMap indirectMap) {
+  public void setIndirectMap(Map<String, Boolean> indirectMap) {
     this.indirectMap = indirectMap;
   }
-
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -138,10 +136,10 @@ public class MapTest   {
       return false;
     }
     MapTest mapTest = (MapTest) o;
-    return Objects.equals(mapMapOfString, mapTest.mapMapOfString) &&
-        Objects.equals(mapOfEnumString, mapTest.mapOfEnumString) &&
-        Objects.equals(directMap, mapTest.directMap) &&
-        Objects.equals(indirectMap, mapTest.indirectMap);
+    return Objects.equals(this.mapMapOfString, mapTest.mapMapOfString) &&
+      Objects.equals(this.mapOfEnumString, mapTest.mapOfEnumString) &&
+      Objects.equals(this.directMap, mapTest.directMap) &&
+      Objects.equals(this.indirectMap, mapTest.indirectMap);
   }
 
   @Override

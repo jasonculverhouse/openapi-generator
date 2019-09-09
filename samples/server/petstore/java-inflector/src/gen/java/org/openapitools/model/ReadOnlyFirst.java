@@ -13,10 +13,10 @@ import io.swagger.annotations.ApiModelProperty;
 
 public class ReadOnlyFirst   {
   @JsonProperty("bar")
-  private String bar = null;
+  private String bar;
 
   @JsonProperty("baz")
-  private String baz = null;
+  private String baz;
 
   /**
    **/
@@ -52,7 +52,6 @@ public class ReadOnlyFirst   {
     this.baz = baz;
   }
 
-
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -62,8 +61,8 @@ public class ReadOnlyFirst   {
       return false;
     }
     ReadOnlyFirst readOnlyFirst = (ReadOnlyFirst) o;
-    return Objects.equals(bar, readOnlyFirst.bar) &&
-        Objects.equals(baz, readOnlyFirst.baz);
+    return Objects.equals(this.bar, readOnlyFirst.bar) &&
+      Objects.equals(this.baz, readOnlyFirst.baz);
   }
 
   @Override
